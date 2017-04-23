@@ -11,8 +11,17 @@ namespace WebApplication1.Models
         public virtual IList<Mine> Mines { get; set; }
         public virtual IList<Resource> Resources { get; set; }
 
-        public String ApplicationUserId { get; set; }
+        public string ApplicationUserId { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
+
+        public void Update()
+        {
+            foreach (Resource res in Resources)
+            {
+                res.Update();
+            }
+        }
+
     }
 
     public class Resource
@@ -25,6 +34,19 @@ namespace WebApplication1.Models
         public DateTime LastUpdate { get; set; }
         public ResourceType Type { get; set; }
 
+        public void Update()
+        {
+            double hours = (DateTime.Now - LastUpdate).TotalHours;
+            foreach (var mine in City.Mines)
+            {
+                if (mine.Type == Type)
+                {
+                    Value += hours * 13 * mine.Level;
+                }
+            }
+            LastUpdate = DateTime.Now;
+        }
+
         public double Value { get; set; }
     }
 
@@ -35,7 +57,13 @@ namespace WebApplication1.Models
 
         public int Level { get; set; }
 
+
         public ResourceType Type { get; set; }
+
+        public void Upgrade()
+        {
+            Level++;
+        }
     }
 
     public enum ResourceType

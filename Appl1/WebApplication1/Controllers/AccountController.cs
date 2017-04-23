@@ -202,7 +202,6 @@ namespace WebApplication1.Controllers
                                    LastUpdate = DateTime.Now,
                                },
                            }
-
                        },
                    }, };
 
