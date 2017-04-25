@@ -18,6 +18,14 @@ namespace WebApplication1.Models
             return userIdentity;
         }
         public virtual IList<City> Cities{ get; set;}
+
+        public void UpdateCities()
+        {
+            foreach (var city in Cities)
+            {
+                city.Update();
+            }
+        }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
