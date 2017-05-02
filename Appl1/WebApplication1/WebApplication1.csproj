@@ -243,7 +243,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\MineScript\Mines.js" />
+<<<<<<< HEAD
     <Content Include="Scripts\MineScript\UpgradeTime.js" />
+=======
+>>>>>>> 4fd3036b03526e54e6b2e5a282e28773724b22c3
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />

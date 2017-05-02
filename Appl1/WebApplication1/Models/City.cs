@@ -74,6 +74,11 @@ namespace WebApplication1.Models
         {
             return (level ?? this.Level) * 13;
         }
+
+        public double GetProductionPerHour(int? level = null)
+        {
+            return (level ?? this.Level) * 13;
+        }
     }
 
     public enum ResourceType

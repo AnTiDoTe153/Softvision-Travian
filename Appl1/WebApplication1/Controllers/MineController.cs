@@ -20,6 +20,7 @@ namespace WebApplication1.Controllers
    
             var userId = this.User.Identity.GetUserId();
             var user = dbContext.Users.Find(userId);
+<<<<<<< HEAD
             var city = user.Cities.First();
 
             if (cityId != null)
@@ -31,6 +32,33 @@ namespace WebApplication1.Controllers
             dbContext.SaveChanges();
 
             return View(city);
+        }
+
+        private void UpdteResources(City city)
+        {
+            var start = DateTime.Now;
+            foreach (var res in city.Resources)
+            {
+                foreach (var mine in city.Mines)
+                {
+                    if (mine.Type == res.Type)
+                    {
+                        res.Value += mine.GetProductionPerHour() * (start - res.LastUpdate).TotalHours;
+                    }
+                }
+                res.LastUpdate = start;
+            }
+=======
+            foreach (var city in user.Cities)
+            {
+                this.UpdteResources(city);
+            }
+            
+ 
+            user.UpdateCities();
+>>>>>>> 4fd3036b03526e54e6b2e5a282e28773724b22c3
+            dbContext.SaveChanges();
+
         }
 
         private void UpdteResources(City city)

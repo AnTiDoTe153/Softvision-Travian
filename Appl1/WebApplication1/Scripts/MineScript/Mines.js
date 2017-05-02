@@ -16,7 +16,14 @@
         var mines = $(".mines").find("." + resourceName);
 
         $.each(mines, function (index, value) {
+<<<<<<< HEAD
             currentProduction += parseInt($(value).find(".hourProduction").text());           
+=======
+            currentProduction += parseInt($(value).find(".hourProduction").text());
+
+            console.log(currentProduction);
+           
+>>>>>>> 4fd3036b03526e54e6b2e5a282e28773724b22c3
         });
 
         var nextValue = (currentValue + ((start.getTime() - update) / 1000 / 60 / 60) * currentProduction).toFixed(4);

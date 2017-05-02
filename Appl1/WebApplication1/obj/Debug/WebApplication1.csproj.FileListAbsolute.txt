@@ -212,6 +212,7 @@ C:\Users\svuser\Documents\Visual Studio 2017\Projects\Softvision-lab1\Appl1\WebA
 C:\Users\svuser\Documents\Visual Studio 2017\Projects\Softvision-lab1\Appl1\WebApplication1\bin\roslyn\System.Xml.XmlDocument.dll
 C:\Users\svuser\Documents\Visual Studio 2017\Projects\Softvision-lab1\Appl1\WebApplication1\bin\roslyn\System.Xml.XPath.dll
 C:\Users\svuser\Documents\Visual Studio 2017\Projects\Softvision-lab1\Appl1\WebApplication1\bin\roslyn\System.Xml.XPath.XDocument.dll
+<<<<<<< HEAD
 C:\Users\Pebbles\Desktop\Java projects\Appl1\WebApplication1\bin\ApplicationInsights.config
 C:\Users\Pebbles\Desktop\Java projects\Appl1\WebApplication1\bin\roslyn\csc.exe
 C:\Users\Pebbles\Desktop\Java projects\Appl1\WebApplication1\bin\roslyn\csc.exe.config
@@ -330,3 +331,5 @@ C:\Users\Pebbles\Desktop\Java projects\Appl1\WebApplication1\bin\Microsoft.AspNe
 C:\Users\Pebbles\Desktop\Java projects\Appl1\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\Pebbles\Desktop\Java projects\Appl1\WebApplication1\obj\Debug\WebApplication1.pdb
 C:\Users\Pebbles\Desktop\Java projects\Appl1\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
+=======
+>>>>>>> 4fd3036b03526e54e6b2e5a282e28773724b22c3
