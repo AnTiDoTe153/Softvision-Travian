@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mines - My ASP.NET Application</title>
+	<link href="/Content/bootstrap.css" rel="stylesheet" />
+	<link href="/Content/site.css" rel="stylesheet" />
+
+	<script src="/Scripts/modernizr-2.6.2.js"></script>
+	<script src="/Scripts/modernizr-2.8.3.js"></script>
+
+
+</head>
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">Application name</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/Mines">Mines</a></li>
+					<li><a href="/Home/About">About</a></li>
+					<li><a href="/Home/Contact">Contact</a></li>
+				</ul>
+				<form action="/Account/LogOff" class="navbar-right" id="logoutForm" method="post">
+					<input name="__RequestVerificationToken" type="hidden" value="Lxaky9ev6xsJK3BqWNb6mrtsEXaw9Dz-WDVmUDvnIpa7Z7_pT1NgMrJaJG5_iILXAvG9LKU81YZRIXlgOcOvfxHrIeD83u2Roq3blFp207YUgIDyK6owo67Ja3yZk0fIqjGr2xqbIHTNIWw9fB2cvA2" />    <ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="/Manage" title="Manage">Hello mail@mail.com!</a>
+						</li>
+						<li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+					</ul>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="container body-content">
+		<table class="resourcesTable">
+			<tr>
+				<td class="res-img Clay"><img src="/Content/img/icon-Clay.png" /></td>
+				<td class="res-value Clay" id="Clay">1.5468</td>
+				<td class="res-update Clay hidden">5/2/2017 2:24:27 PM</td>
+				<td class="res-img Iron"><img src="/Content/img/icon-Iron.png" /></td>
+				<td class="res-value Iron" id="Iron">0.0000</td>
+				<td class="res-update Iron hidden">5/2/2017 2:24:27 PM</td>
+				<td class="res-img Wheat"><img src="/Content/img/icon-Wheat.png" /></td>
+				<td class="res-value Wheat" id="Wheat">0.0000</td>
+				<td class="res-update Wheat hidden">5/2/2017 2:24:27 PM</td>
+				<td class="res-img Wood"><img src="/Content/img/icon-Wood.png" /></td>
+				<td class="res-value Wood" id="Wood">0.0000</td>
+				<td class="res-update Wood hidden">5/2/2017 2:24:27 PM</td>
+			</tr>
+		</table>
+
+		<div>
+			<table>
+				<tr>
+					<td><a>City 1</a></td>
+				</tr>
+				<tr>
+					<td><a>City 2</a></td>
+				</tr>
+				<tr>
+					<td><a>City 3</a></td>
+				</tr>
+			</table>
+		</div>
+		<div class="main">
+			<img id="town-img" src="Content/img/village-bg.jpg"/>
+            <div class="mine-wrapper">
+                <div class="mine-level mine-clay upgrading"></div>
+                <div class="mine-level mine-iron"></div>
+                <div class="mine-level mine-wheat"></div>
+                <div class="mine-level mine-wood"></div>
+            </div>
+		</div>
+
+
+		<hr />
+		<footer>
+			<p>&copy; 2017 - My ASP.NET Application</p>
+		</footer>
+	</div>
+
+	<script src="/Scripts/jquery-3.1.1.js"></script>
+
+	<script src="/Scripts/bootstrap.js"></script>
+	<script src="/Scripts/respond.js"></script>
+
+
+	<script src="/Scripts/site/mines.js"> </script>
+	<script src="/Scripts/Date.min.js"></script>
+
+
+	<!-- Visual Studio Browser Link -->
+	<script type="application/json" id="__browserLink_initializationData">
+		{"appName":"Chrome","requestId":"70242cc639b4479c904d9c4a7d32cc26"}
+	</script>
+	<script type="text/javascript" src="http://localhost:64021/c86562cf77ae461a80a3789edb215eb2/browserLink" async="async"></script>
+	<!-- End Browser Link -->
+
+</body>
+</html>

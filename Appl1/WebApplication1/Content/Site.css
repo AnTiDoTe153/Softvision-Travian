@@ -1,0 +1,128 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+body {
+    background-image:url(../Content/img/background-clearing.jpg);
+    background-repeat:no-repeat;
+    height:100%;
+}
+.main {
+    height:100vh;
+}
+
+.mines {
+    margin-left:300px;
+    margin-top:200px;
+}
+
+.mines {
+    font-size:x-large;
+}
+
+td {
+    background-color: lightgreen;
+}
+
+.mine-detail{
+    margin:10px;
+    padding:50px;
+    background-color:white;
+    border-color:green;
+    border-width:1px;
+    border-style: solid;
+    border-radius:25px;
+}
+
+#town-img {
+    position: absolute;
+    top: 205px;
+    left: 585px;
+}
+
+.mine-wrapper {
+    position: absolute;
+    top: 205px;
+    left: 585px;
+}
+
+.mine-level {
+    position : absolute;
+    top : 100px;
+    left : 100px;
+    background : green;
+    width : 30px;
+    height : 30px;
+    border-radius : 15px;
+    transition : all .2s linear;
+}
+
+.mine-level:hover  {
+    transform:scale(1.5);
+}
+
+.mine-clay {
+    background: orange;
+    top: 71px;
+    left: 245px;
+}
+
+.mine-wood {
+    background: green;
+    top: 217px;
+    left: 244px;
+}
+
+.mine-wheat {
+    background: yellow;
+    top: 136px;
+    left: 93px;
+    transform: translate(10.5px, 8.5px);
+
+}
+
+.mine-iron {
+    background: gray;
+    top: 59px;
+    left: 110px;
+}
+
+@keyframes upgrading {
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.5);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+.upgrading{
+    animation : upgrading 0.5s infinite;
+}
