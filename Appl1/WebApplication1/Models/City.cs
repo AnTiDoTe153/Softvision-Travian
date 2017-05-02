@@ -52,6 +52,7 @@ namespace WebApplication1.Models
 
     public class Mine
     {
+        public DateTime UpgradeCompletion { get; set; }
         public int MineId { get; set; }
         public virtual City City { get; set; }
 
@@ -62,7 +63,16 @@ namespace WebApplication1.Models
 
         public void Upgrade()
         {
-            Level++;
+            if (UpgradeCompletion <= DateTime.Now)
+            {
+                Level++;
+                UpgradeCompletion = DateTime.Now.AddHours(1);
+            }  
+        }
+
+        public double GetProductionPerHour(int? level = null)
+        {
+            return (level ?? this.Level) * 13;
         }
     }
 

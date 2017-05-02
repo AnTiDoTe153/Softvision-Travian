@@ -150,6 +150,7 @@ namespace WebApplication1.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+        
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Cities = new List<City>
@@ -162,21 +163,25 @@ namespace WebApplication1.Controllers
                                {
                                    Level = 0,
                                    Type = ResourceType.Clay,
+                                   UpgradeCompletion = DateTime.Now
                                },
                                new Mine
                                {
                                    Level = 0,
                                    Type = ResourceType.Iron,
+                                   UpgradeCompletion = DateTime.Now
                                },
                                new Mine
                                {
                                    Level = 0,
                                    Type = ResourceType.Wheat,
+                                   UpgradeCompletion = DateTime.Now
                                },
                                new Mine
                                {
                                    Level = 0,
                                    Type = ResourceType.Wood,
+                                   UpgradeCompletion = DateTime.Now
                                },
                            },
                            Resources = new List<Resource>

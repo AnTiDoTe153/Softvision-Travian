@@ -15,17 +15,40 @@ namespace WebApplication1.Controllers
         // GET: Mine
         ApplicationDbContext dbContext = new ApplicationDbContext();
 
-        public ActionResult Index()
+        public ActionResult Index(int? cityId)
         {
    
             var userId = this.User.Identity.GetUserId();
             var user = dbContext.Users.Find(userId);
+            var city = user.Cities.First();
 
-
-            user.UpdateCities();
+            if (cityId != null)
+            {
+                city = dbContext.Cities.Find(cityId);
+            }
+            UpdteResources(city);            
+ 
             dbContext.SaveChanges();
 
-            return View(user);
+            return View(city);
+        }
+
+        private void UpdteResources(City city)
+        {
+            var start = DateTime.Now;
+            foreach (var res in city.Resources)
+            {
+                foreach (var mine in city.Mines)
+                {
+                    if (mine.Type == res.Type)
+                    {
+                        res.Value += mine.GetProductionPerHour() * (start - res.LastUpdate).TotalHours;
+                    }
+                }
+                res.LastUpdate = start;
+            }
+            dbContext.SaveChanges();
+
         }
 
         [HttpPost]

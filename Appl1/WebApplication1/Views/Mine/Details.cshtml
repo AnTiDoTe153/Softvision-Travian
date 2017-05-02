@@ -1,4 +1,5 @@
-﻿@model WebApplication1.Models.Mine
+﻿@using System.Configuration
+@model WebApplication1.Models.Mine
 
 @{
     ViewBag.Title = "Details";
@@ -28,5 +29,13 @@
     
     <p>Production: @(Model.Level * 13)</p>
     <p>Production for next level: @((Model.Level + 1) * 13)</p>
+    <p hidden>Time when new upgrade will be available: <span class ="UpgCompl"> @(Model.UpgradeCompletion) </span> </p>
+    <p>Remaining time until next update: <span class ="UpgTime">00:00:00</span></p>
 
 </div>
+
+@section Scripts{
+        
+    <script src="~/Scripts/MineScript/UpgradeTime.js"></script>
+    <script src="~/Scripts/Date.min.js"></script>
+}
