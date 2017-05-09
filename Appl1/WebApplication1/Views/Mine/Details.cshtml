@@ -5,37 +5,50 @@
     ViewBag.Title = "Details";
 }
 
-<div style="height: 250px; background-color: rgb(198, 184, 125)">
-    <h1>Details - @(Model.Type)</h1>
+<div class=" @Model.Type" style="border : solid black 2px; margin: 25px; padding : 5px; height: 300px; background-color: rgb(198, 184, 125); border-radius:15px;">
+    <h1>@(Model.Type) Mine</h1>
+
+ 
     <img style="float : left" src="~/Content//img/mine-@(Model.Type).png" />
 
-    @if (Model.Type == WebApplication1.Models.ResourceType.Wheat)
-    {
-        <p>Description: <br /> Your population`s food is produced here. By increasing the farm`s level, you increase its crop production.</p>
-    }
-    @if (Model.Type == WebApplication1.Models.ResourceType.Iron)
-    {
-        <p>Description: <br />Here miners produce the precious resource of iron. By increasing the mine`s level, you increase the iron production.</p>
-    }
-    @if (Model.Type == WebApplication1.Models.ResourceType.Clay)
-    {
-        <p>Description: <br />Clay is produced here. By increasing its level, you increase the clay production.</p>
-    }
-    @if (Model.Type == WebApplication1.Models.ResourceType.Wood)
-    {
-        <p>Description: <br />The woodcutter cuts down trees in order to produce lumber. The further you extend the woodcutter, the more lumber is produced.</p>
-       
-    }
-    
-    <p>Production: @(Model.Level * 13)</p>
-    <p>Production for next level: @((Model.Level + 1) * 13)</p>
-    <p hidden>Time when new upgrade will be available: <span class ="UpgCompl"> @(Model.UpgradeCompletion) </span> </p>
-    <p>Remaining time until next update: <span class ="UpgTime">00:00:00</span></p>
-    <form action="/Mine/Details" method="post">
-        <input type="hidden" , name="mineId" , value="@Model.MineId" />
-        <input type="submit" value="Upgrade" />
-    </form>
-       
+        @if (Model.Type == WebApplication1.Models.ResourceType.Wheat)
+        {
+            <p>Description: <br /> Your population`s food is produced here. By increasing the farm`s level, you increase its crop production.</p>
+        }
+        @if (Model.Type == WebApplication1.Models.ResourceType.Iron)
+        {
+            <p>Description: <br />Here miners produce the precious resource of iron. By increasing the mine`s level, you increase the iron production.</p>
+        }
+        @if (Model.Type == WebApplication1.Models.ResourceType.Clay)
+        {
+            <p>Description: <br />Clay is produced here. By increasing its level, you increase the clay production.</p>
+        }
+        @if (Model.Type == WebApplication1.Models.ResourceType.Wood)
+        {
+            <p>Description: <br />The woodcutter cuts down trees in order to produce lumber. The further you extend the woodcutter, the more lumber is produced.</p>
+
+        }
+
+        <p>Production: @(Model.Level * 13)</p>
+        <p>Production for next level: @((Model.Level + 1) * 13)</p>
+        <p hidden>Time when new upgrade will be available: <span class="UpgCompl"> @(Model.UpgradeCompletion) </span> </p>
+        <p>Remaining time until next update: <span class="UpgTime">00:00:00</span></p>
+
+        <form action="/Mine/Details" method="post">
+            <input type="hidden" , name="mineId" , value="@Model.MineId" />
+            <input type="submit" value="Upgrade" />
+        </form>
+
+
+        @using (Html.BeginForm("Upgrade", "Mine"))
+        {
+            <input name="mineId" value="10" type="hidden" />
+            @Html.HiddenFor(m => m.MineId);
+            @Html.CheckBox("fastUpgrade");
+            <button type="submit">UPG</button>
+        }
+
+
 
 </div>
 
