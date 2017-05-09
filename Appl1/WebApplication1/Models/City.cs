@@ -55,6 +55,7 @@ namespace WebApplication1.Models
         public DateTime UpgradeCompletion { get; set; }
         public int MineId { get; set; }
         public virtual City City { get; set; }
+        public string MineStyle { get; set; }
 
         public int Level { get; set; }
 

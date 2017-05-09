@@ -69,61 +69,152 @@ namespace WebApplication1.Controllers
             user.Cities.Add(new City
             {
                 Mines = new List<Mine>
-                {
-                    new Mine
-                    {
-                        Level = 0,
-                        Type = ResourceType.Clay,
-                    },
-                    new Mine
-                    {
-                        Level = 0,
-                        Type = ResourceType.Iron,
-                    },
-                    new Mine
-                    {
-                        Level = 0,
-                        Type = ResourceType.Wheat,
-                    },
-                    new Mine
-                    {
-                        Level = 0,
-                        Type = ResourceType.Wood,
-                    },
-                },
+                           {
+                               new Mine
+                               {
+                                   Level = 0,
+                                   Type = ResourceType.Clay,
+                                   UpgradeCompletion = DateTime.Now,
+                                   MineStyle = "mine-clay-1"
+
+                               },
+                               new Mine
+                               {
+                                   Level = 0,
+                                   Type = ResourceType.Clay,
+                                   UpgradeCompletion = DateTime.Now,
+                                   MineStyle = "mine-clay-2"
+                               },
+                               new Mine
+                               {
+                                   Level = 0,
+                                   Type = ResourceType.Clay,
+                                   UpgradeCompletion = DateTime.Now,
+                                   MineStyle = "mine-clay-3"
+                               },
+                               new Mine
+                               {
+                                   Level = 0,
+                                   Type = ResourceType.Iron,
+                                   UpgradeCompletion = DateTime.Now,
+                                   MineStyle = "mine-iron-1"
+                               },
+                               new Mine
+                               {
+                                   Level = 0,
+                                   Type = ResourceType.Iron,
+                                   UpgradeCompletion = DateTime.Now,
+                                   MineStyle = "mine-iron-2"
+                               },
+                               new Mine
+                               {
+                                   Level = 0,
+                                   Type = ResourceType.Wheat,
+                                   UpgradeCompletion = DateTime.Now,
+                                   MineStyle = "mine-wheat-1"
+                               },
+                               new Mine
+                               {
+                                   Level = 0,
+                                   Type = ResourceType.Wheat,
+                                   UpgradeCompletion = DateTime.Now,
+                                   MineStyle = "mine-wheat-2"
+                               },
+                               new Mine
+                               {
+                                   Level = 0,
+                                   Type = ResourceType.Wheat,
+                                   UpgradeCompletion = DateTime.Now,
+                                   MineStyle = "mine-wheat-3"
+                               },
+                               new Mine
+                               {
+                                   Level = 0,
+                                   Type = ResourceType.Wheat,
+                                   UpgradeCompletion = DateTime.Now,
+                                   MineStyle = "mine-wheat-4"
+                               },
+                               new Mine
+                               {
+                                   Level = 0,
+                                   Type = ResourceType.Wheat,
+                                   UpgradeCompletion = DateTime.Now,
+                                   MineStyle = "mine-wheat-5"
+                               },
+                               new Mine
+                               {
+                                   Level = 0,
+                                   Type = ResourceType.Wheat,
+                                   UpgradeCompletion = DateTime.Now,
+                                   MineStyle = "mine-wheat-6"
+                               },
+                               new Mine
+                               {
+                                   Level = 0,
+                                   Type = ResourceType.Wood,
+                                   UpgradeCompletion = DateTime.Now,
+                                   MineStyle = "mine-wood-1"
+                               },
+                               new Mine
+                               {
+                                   Level = 0,
+                                   Type = ResourceType.Wood,
+                                   UpgradeCompletion = DateTime.Now,
+                                   MineStyle = "mine-wood-2"
+                               },
+                               new Mine
+                               {
+                                   Level = 0,
+                                   Type = ResourceType.Wood,
+                                   UpgradeCompletion = DateTime.Now,
+                                   MineStyle = "mine-wood-3"
+                               },
+                           },
                 Resources = new List<Resource>
-                {
-                    new Resource
-                    {
-                        Type = ResourceType.Clay,
-                        LastUpdate = DateTime.Now,
-                    },
-                    new Resource
-                    {
-                        Type = ResourceType.Iron,
-                        LastUpdate = DateTime.Now,
-                    },
-                    new Resource
-                    {
-                        Type = ResourceType.Wheat,
-                        LastUpdate = DateTime.Now,
-                    },
-                    new Resource
-                    {
-                        Type = ResourceType.Wood,
-                        LastUpdate = DateTime.Now,
-                    },
-                }
+                           {
+                               new Resource
+                               {
+                                   Type = ResourceType.Clay,
+                                   LastUpdate = DateTime.Now,
+                               },
+                               new Resource
+                               {
+                                   Type = ResourceType.Iron,
+                                   LastUpdate = DateTime.Now,
+                               },
+                               new Resource
+                               {
+                                   Type = ResourceType.Wheat,
+                                   LastUpdate = DateTime.Now,
+                               },
+                               new Resource
+                               {
+                                   Type = ResourceType.Wood,
+                                   LastUpdate = DateTime.Now,
+                               },
+                           }
             });
             dbContext.SaveChanges();
             return RedirectToAction("Index", "Mine");
         }
 
-        public ActionResult Details(int mineId)
+        [HttpPost]
+        [ActionName("Details")]
+        public ActionResult DetailsPost(int mineId)
         {
             var mine = dbContext.Mines.Find(mineId);
-            
+            mine.Upgrade();
+            dbContext.SaveChanges();
+
+            return RedirectToAction("Details", "Mine", new { id = mineId });
+        }
+
+        public ActionResult Details(int id)
+        {
+            var mine = dbContext.Mines.Find(id);
+
             return View(mine);
         }
+
     }
 }

@@ -69,44 +69,130 @@ td {
 }
 
 .mine-level {
-    position : absolute;
-    top : 100px;
-    left : 100px;
-    background : green;
-    width : 30px;
-    height : 30px;
-    border-radius : 15px;
-    transition : all .2s linear;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    background: green;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    transition: all .2s linear;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
 }
 
-.mine-level:hover  {
-    transform:scale(1.5);
+.mine-level:hover {
+    transform: scale(1.5);
+    text-decoration: none;
 }
 
-.mine-clay {
-    background: orange;
+.mine-clay-1 {
+    background: #FBC273;
+    border: solid 2px;
+    border-color: #A3714C;
     top: 71px;
     left: 245px;
 }
 
-.mine-wood {
-    background: green;
+.mine-clay-2 {
+    background: #FBC273;
+    border: solid 2px;
+    border-color: #A3714C;
+    top: 220px;
+    left: 333px;
+}
+
+.mine-clay-3 {
+    background: #FBC273;
+    border: solid 2px;
+    border-color: #A3714C;
+    top: 235px;
+    left: 149px;
+}
+ 
+.mine-wood-1 {
+    background: #A7DE8D;
+    border: solid 2px;
+    border-color: #578E3A;
     top: 217px;
     left: 244px;
 }
 
-.mine-wheat {
-    background: yellow;
-    top: 136px;
-    left: 93px;
-    transform: translate(10.5px, 8.5px);
-
+.mine-wood-2 {
+    background: #A7DE8D;
+    border: solid 2px;
+    border-color: #578E3A;
+    top: 18px;
+    left: 147px;
 }
 
-.mine-iron {
-    background: gray;
+.mine-wood-3 {
+    background: #A7DE8D;
+    border: solid 2px;
+    border-color: #578E3A;
+    top: 32px;
+    left: 329px;
+}
+
+.mine-wheat-1 {
+    background: #FAE47E;
+    border: solid 2px;
+    border-color: #C4B25A;
+    top: 118px;
+    left: 58px;
+}
+
+.mine-wheat-2 {
+    background: #FAE47E;
+    border: solid 2px;
+    border-color: #C4B25A;
+    top: 158px;
+    left: 373px;
+}
+
+.mine-wheat-3 {
+    background: #FAE47E;
+    border: solid 2px;
+    border-color: #C4B25A;
+    top: 25px;
+    left: 242px;
+}
+.mine-wheat-4 {
+    background: #FAE47E;
+    border: solid 2px;
+    border-color: #C4B25A;
+    top: 165px;
+    left: 130px;
+}
+.mine-wheat-5 {
+    background: #FAE47E;
+    border: solid 2px;
+    border-color: #C4B25A;
+    top: 118px;
+    left: 125px;
+}
+.mine-wheat-6 {
+    background: #FAE47E;
+    border: solid 2px;
+    border-color: #C4B25A;
+    top: 166px;
+    left: 57px;
+}
+.mine-iron-1 {
+    background: #CAE9E1;
+    border: solid 2px;
+    border-color: #80A68D;
     top: 59px;
     left: 110px;
+}
+
+.mine-iron-2 {
+    background: #CAE9E1;
+    border: solid 2px;
+    border-color: #80A68D;
+    top: 91px;
+    left: 370px;
 }
 
 @keyframes upgrading {

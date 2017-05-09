@@ -10,6 +10,20 @@
 </form>
 *@
 
+
+<table>
+    <tr>
+        @foreach (var rest in Model.Resources)
+        {
+
+            <td class="res-img @(rest.Type)"><img src="~/Content/img/icon-@(rest.Type).png" /></td>
+            <td class="res-value @(rest.Type)">@(rest.Value)</td>
+            <td class="res-update @(rest.Type)" hidden >@(rest.LastUpdate)</td>
+
+        }
+    </tr>
+</table>
+
 @{
     var user = Model.ApplicationUser;
     <table >
@@ -22,43 +36,35 @@
     </table>
 }
 
- 
-    <h3 style="width: 200px; background-color: rgb(198, 184, 125)">City @Model.CityId</h3>
-    <table class="mines">
-        @foreach (var mine in Model.Mines)
-        {
-            <tr class="@(mine.Type)">
-                <td><img src="~/Content/img/icon-@(mine.Type).png" /></td>
-                <td>@Html.ActionLink(@mine.Type.ToString() + " mine", "Details", new { mineId = mine.MineId })</td>
-                <td>level: @mine.Level</td>
-                <td>
-                    <form action="/Mine/Index" method="post">
-                        <input type="hidden" , name="mineId" , value="@mine.MineId" />
-                        <input type="submit" value="Upgrade" />
-                    </form>
-                </td>
-                <td class="hourProduction">@mine.GetProductionPerHour() </td>
-            </tr>
-        }
-    </table>
-
-
-    <h3>Resrouce levels</h3>
-
-    <table>
-        
-            @foreach (var rest in Model.Resources)
+@*
+            <h3 style="width: 200px; background-color: rgb(198, 184, 125)">City @Model.CityId</h3>
+        <table class="mines">
+            @foreach (var mine in Model.Mines)
             {
-                <tr>
-                <td class="res-img @(rest.Type)"><img src="~/Content/img/icon-@(rest.Type).png" /></td>
-                <td class="res-value @(rest.Type)">@(rest.Value)</td>
-                <td class="res-update @(rest.Type)">@(rest.LastUpdate)</td>
-        </tr>
+                <tr class="@(mine.Type)">
+                    <td>@Html.ActionLink(@mine.Type.ToString() + " mine", "Details", new { id = mine.MineId })</td>
+                    <td>level: @mine.Level  </td>
+                    <td class="hourProduction">@mine.GetProductionPerHour() </td>
+                </tr>
             }
-    </table>
+        </table>
+  *@
+        <div class="main mines">
+            <img id="town-img" src="Content/img/village-bg.jpg">
+            <div class="mine-wrapper">
+            @foreach (var mine in Model.Mines)
+            {
+                <div class ="@(mine.Type)">
+                    <div class="mine-level @(mine.MineStyle)">@Html.ActionLink(@mine.Level.ToString(), "Details", new { id = mine.MineId })</div>
+                    <div class="hourProduction" style="display: none;">@mine.GetProductionPerHour()</div>
+                </div>
 
-@section Scripts{
-        
-<script src="~/Scripts/MineScript/Mines.js"></script>
-<script src="~/Scripts/Date.min.js"></script>
-    }
+            }
+            </div>
+        </div>
+
+        @section Scripts{
+
+        <script src="~/Scripts/MineScript/Mines.js"></script>
+        <script src="~/Scripts/Date.min.js"></script>
+            }
