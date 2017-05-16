@@ -1,5 +1,6 @@
 ﻿@model WebApplication1.Models.City
 @{
+
     ViewBag.Title = "Index";
 }
 
@@ -53,13 +54,25 @@
             @foreach (var mine in Model.Mines)
             {
                 <div class ="@(mine.Type)">
-                    <div class="mine-level @(mine.MineStyle)">@Html.ActionLink(@mine.Level.ToString(), "Details", new { id = mine.MineId })</div>
+                    <div class="mine-level @(mine.MineStyle)">
+                        <div style="cursor:pointer" class="mine-details-btn" data-mine-id="@(mine.MineId)">@mine.Level.ToString()</div>
+                    </div>
+                 
                     <div class="hourProduction" style="display: none;">@mine.GetProductionPerHour()</div>
                 </div>
 
             }
             </div>
+
+         
         </div>
+
+    <div id="mine-details-container">
+        <div class="close-btn">X</div>
+        <div class="content">
+
+        </div>
+    </div>
 
         @section Scripts{
 

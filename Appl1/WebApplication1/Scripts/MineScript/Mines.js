@@ -27,6 +27,22 @@
         $(".res-update." + resourceName).text(start.strftime("%Y-%m-%d %H:%M:%S"));
     };
 
-    setInterval(updateResources, 1500);
+   // setInterval(updateResources, 1500);
 
+    var getMineDetailsHTML = function (mineId) {
+        $('#mine-details-container > .content').empty();
+        $('#mine-details-container > .content').load("Mine/Details/" + mineId);
+        $('#mine-details-container').addClass('show');
+    }
+
+    $('.mine-details-btn').click(function (e) {
+        var mineId = $(this).data('mine-id');
+        getMineDetailsHTML(mineId);
+        console.log("foobar");
+    });
+
+    $('#mine-details-container > .close-btn').click(function () {
+        $('#mine-details-container').removeClass('show');
+    });
 });
+

@@ -817,3 +817,4 @@ C:\Users\Pebbles\Desktop\Soft2\Appl1\WebApplication1\obj\Debug\WebApplication1.d
 C:\Users\Pebbles\Desktop\Soft2\Appl1\WebApplication1\obj\Debug\WebApplication1.pdb
 C:\Users\Pebbles\Desktop\Soft2\Appl1\WebApplication1\obj\Debug\WebApplication1.Migrations.mig2.resources
 C:\Users\Pebbles\Desktop\Soft2\Appl1\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
+C:\Users\svuser\Documents\Visual Studio 2017\Projects\Softvision Lab\Appl1\WebApplication1\obj\Debug\WebApplication1.Migrations.mig2.resources

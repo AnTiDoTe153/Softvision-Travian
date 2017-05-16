@@ -212,3 +212,29 @@ td {
 .upgrading{
     animation : upgrading 0.5s infinite;
 }
+
+#mine-details-container{
+    position : absolute;
+    top: 100px;
+    left: 50%;
+    width: 800px;
+    margin-left : -400px;
+    display : none;
+    min-height : 300px;
+    
+}
+
+#mine-details-container.show{
+    display: block;
+}
+
+#mine-details-container .close-btn{
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+}
+
