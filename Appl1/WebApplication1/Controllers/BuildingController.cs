@@ -25,12 +25,16 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public ActionResult Build(BuildViewModel buid)
         {
+            var building = dbContext.Buildings.Find(buid.BuildingId);
+            building.Level = 1;
+            dbContext.SaveChanges();
             return RedirectToAction("Index");
         }
 
 
 
         public ActionResult Build(int buildingId)
+
         {
             return View(new BuildViewModel
             {

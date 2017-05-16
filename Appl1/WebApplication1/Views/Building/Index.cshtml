@@ -2,23 +2,35 @@
 @{
     ViewBag.Title = "Index";
 }
+<body style="background-image:url(../Content/img/city.jpg);">
+    <h2>Index</h2>
 
-<h2>Index</h2>
 
-
-<table>
-    <tr>
-        <th>Type</th>
-        <th>Level</th>
-        <th>Action</th>
-    </tr>
-    @foreach(var building in Model.Buildings)
-    {
+    <table>
         <tr>
-            <td>@building.BuildingType</td>
-            <td>@building.Level</td>
-            <td>@Html.ActionLink("Build", "Build", new { buildingId = building.BuildingId })</td>
+            <th>Type</th>
+            <th>Level</th>
+            <th>Action</th>
         </tr>
-    }
+        @foreach (var building in Model.Buildings)
+        {
+            <tr>
+                @{
+                    if (building.BuildingType == null)
+                    {
+                        <td>Nothing</td>
+                        <td>0</td>
+                        <td>@Html.ActionLink("Build", "Build", new { buildingId = building.BuildingId })</td>
+                    }
+                    else
+                    {
+                        <td>@building.BuildingType.Name</td>
+                        <td>@building.Level</td>
+                        <td>@Html.ActionLink("Build", "Build", new { buildingId = building.BuildingId })</td>
+                    }
+                }
+            </tr>
+                    }
 
-</table>
+    </table>
+</body>

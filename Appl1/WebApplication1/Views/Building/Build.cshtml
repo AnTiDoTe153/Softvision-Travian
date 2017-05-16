@@ -2,11 +2,16 @@
 @{
     ViewBag.Title = "Build";
 }
-
-
-@Html.ListBoxFor(m => m.SelectedBuildingType, this.Model.BuildingTypes)
-
-
-
+<body style ="background-image:url(../Content/img/city.jpg);">
 <h2>Build</h2>
+
+@using (Html.BeginForm("Build", "Building"))
+{
+    @Html.HiddenFor(m => m.BuildingId);
+    @Html.ListBoxFor(m => m.SelectedBuildingType, this.Model.BuildingTypes)
+    <button type="submit">Build</button>
+}
+    
+</body>
+
 

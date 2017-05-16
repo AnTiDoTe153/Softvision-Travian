@@ -27,6 +27,6 @@
         $(".res-update." + resourceName).text(start.strftime("%Y-%m-%d %H:%M:%S"));
     };
 
-    setInterval(updateResources, 500);
+    setInterval(updateResources, 1500);
 
 });

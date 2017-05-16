@@ -43,6 +43,7 @@ namespace WebApplication1.Controllers
                     if (mine.Type == res.Type)
                     {
                         res.Value += mine.GetProductionPerHour() * (start - res.LastUpdate).TotalHours;
+                        
                     }
                 }
                 res.LastUpdate = start;

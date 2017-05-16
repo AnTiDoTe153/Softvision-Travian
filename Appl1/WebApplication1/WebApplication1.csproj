@@ -217,6 +217,10 @@
     <Compile Include="Migrations\201705091736052_mig4.Designer.cs">
       <DependentUpon>201705091736052_mig4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705160738305_mig2.cs" />
+    <Compile Include="Migrations\201705160738305_mig2.Designer.cs">
+      <DependentUpon>201705160738305_mig2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\City.cs" />
@@ -232,6 +236,9 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\img\background-clearing.jpg" />
+    <Content Include="Content\img\barcacks.png" />
+    <Content Include="Content\img\city.jpg" />
+    <Content Include="Content\img\granary.png" />
     <Content Include="Content\img\icon-clay.png" />
     <Content Include="Content\img\icon-iron.png" />
     <Content Include="Content\img\icon-wheat.png" />
@@ -241,6 +248,7 @@
     <Content Include="Content\img\mine-wheat.png" />
     <Content Include="Content\img\mine-wood.png" />
     <Content Include="Content\img\village-bg.jpg" />
+    <Content Include="Content\img\warehouse.png" />
     <Content Include="Content\village-bg.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -347,6 +355,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705091736052_mig4.resx">
       <DependentUpon>201705091736052_mig4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705160738305_mig2.resx">
+      <DependentUpon>201705160738305_mig2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

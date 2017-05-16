@@ -15,11 +15,9 @@
     <tr>
         @foreach (var rest in Model.Resources)
         {
-
             <td class="res-img @(rest.Type)"><img src="~/Content/img/icon-@(rest.Type).png" /></td>
             <td class="res-value @(rest.Type)">@(rest.Value)</td>
             <td class="res-update @(rest.Type)" hidden >@(rest.LastUpdate)</td>
-
         }
     </tr>
 </table>
