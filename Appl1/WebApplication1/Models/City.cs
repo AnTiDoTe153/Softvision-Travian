@@ -89,6 +89,7 @@ namespace WebApplication1.Models
         public int BuildingId { get; set; }
         public int Level { get; set; }
         public int? BuildingTypeId { get; set; }
+        public string BuildingStyle { get; set; }
         public virtual BuildingType BuildingType { get; set; }
         public int CityId { get; set; }
         public virtual City City { get; set; }

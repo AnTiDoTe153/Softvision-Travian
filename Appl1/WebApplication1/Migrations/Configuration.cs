@@ -49,6 +49,7 @@ namespace WebApplication1.Migrations
                     if (building == null)
                     {
                         building = new Building { City = city };
+                        building.BuildingStyle = String.Concat("building", i);
                         city.Buildings.Add(building);
                     }
                 }
