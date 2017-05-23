@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -11,6 +13,7 @@ namespace WebApplication1.Models
         public virtual IList<Mine> Mines { get; set; }
         public virtual IList<Resource> Resources { get; set; }
         public virtual IList<Building> Buildings { get; set; }
+        public virtual IList<Troup> Troups { get; set; }
 
         public int MaxWheat
         {
@@ -19,7 +22,7 @@ namespace WebApplication1.Models
                 int sum = 0;
                 foreach (var b in Buildings)
                 {
-                    if (b.BuildingType.Name == "Granary")
+                    if (b.BuildingType?.Name == "Granary")
                     {
                         sum += 100 + 100 * b.Level;
                     }
@@ -35,7 +38,7 @@ namespace WebApplication1.Models
                 int sum = 0;
                 foreach (var b in Buildings)
                 {
-                    if (b.BuildingType.Name == "Barn")
+                    if (b.BuildingType?.Name == "Barn")
                     {
                         sum += 100 + 100 * b.Level;
                     }
@@ -46,7 +49,7 @@ namespace WebApplication1.Models
 
 
         public string ApplicationUserId { get; set; }
-        public ApplicationUser ApplicationUser { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
         public void Update()
         {
@@ -132,6 +135,54 @@ namespace WebApplication1.Models
         {
             return (level ?? this.Level) * 13;
         }
+    }
+    public class Troup
+    {
+        public int TroupId { get; set; }
+        public int TroupTypeId { get; set; }
+        public virtual TroupType TroupType { get; set; }
+        public int CityId { get; set; }
+        public virtual City City { get; set; }
+        public int TroupCount { get; set; }
+
+    }
+
+    public class TroupType
+    {
+        public int TroupTypeId { get; set; }
+
+        [Required]
+        [MinLength(5)]
+        [MaxLength(15)]
+        [RegularExpression("[A-z]*")]
+        public string Name { get; set; }
+
+
+
+        [Required]
+        [Range(0, 100)]
+        public double Attack { get; set; }
+
+        [Required]
+        [Range(0, 100)]
+        public double Defence { get; set; }
+
+        [Required]
+        [Range(0, 100)]
+        public int CreationSpeed { get; set; }
+        
+    }
+
+    public class CityFilterViewModel
+    {
+        public string Name { get; set; }
+        public string Email { get; set; }
+        [DisplayName("Min Troup Count")]
+        public int? MinTroupCount { get; set; }
+        [DisplayName("Max Troup Count")]
+        public int? MaxTroupCount { get; set; }
+
+        public List<City> Results { get; set; }
     }
 
     public enum ResourceType

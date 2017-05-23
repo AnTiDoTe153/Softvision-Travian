@@ -191,9 +191,11 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BuildingController.cs" />
+    <Compile Include="Controllers\CitiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MineController.cs" />
+    <Compile Include="Controllers\TroupTypes1Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -220,6 +222,14 @@
     <Compile Include="Migrations\201705160738305_mig2.cs" />
     <Compile Include="Migrations\201705160738305_mig2.Designer.cs">
       <DependentUpon>201705160738305_mig2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705231534358_troups.cs" />
+    <Compile Include="Migrations\201705231534358_troups.Designer.cs">
+      <DependentUpon>201705231534358_troups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705231600400_validation.cs" />
+    <Compile Include="Migrations\201705231600400_validation.Designer.cs">
+      <DependentUpon>201705231600400_validation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -328,6 +338,12 @@
     <Content Include="Views\Building\Index.cshtml" />
     <Content Include="Views\Building\Build.cshtml" />
     <Content Include="Views\Building\Details.cshtml" />
+    <Content Include="Views\TroupTypes1\Create.cshtml" />
+    <Content Include="Views\TroupTypes1\Delete.cshtml" />
+    <Content Include="Views\TroupTypes1\Details.cshtml" />
+    <Content Include="Views\TroupTypes1\Edit.cshtml" />
+    <Content Include="Views\TroupTypes1\Index.cshtml" />
+    <Content Include="Views\Cities\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -359,6 +375,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705160738305_mig2.resx">
       <DependentUpon>201705160738305_mig2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705231534358_troups.resx">
+      <DependentUpon>201705231534358_troups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705231600400_validation.resx">
+      <DependentUpon>201705231600400_validation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
