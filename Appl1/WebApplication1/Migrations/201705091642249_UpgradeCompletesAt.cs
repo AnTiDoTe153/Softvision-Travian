@@ -7,12 +7,12 @@ namespace WebApplication1.Migrations
     {
         public override void Up()
         {
-            AddColumn("dbo.Mine", "UpgradeCompetesAt", c => c.DateTime(nullable: false));
+            AddColumn("dbo.Mine", "UpgradeCompletesAt", c => c.DateTime(nullable: false));
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Mine", "UpgradeCompetesAt");
+            DropColumn("dbo.Mine", "UpgradeCompletesAt");
         }
     }
 }

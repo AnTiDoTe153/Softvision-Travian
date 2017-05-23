@@ -1,13 +1,13 @@
-﻿$(document).ready(function () {
+﻿$(document).ready(function() {
 
-    var updateResources = function () {
+    var updateResources = function() {
         updateResource("Clay");
         updateResource("Wheat");
         updateResource("Iron");
         updateResource("Wood");
     };
 
-    var updateResource = function (resourceName) {
+    var updateResource = function(resourceName) {
         var start = new Date();
         var currentProduction = 0;
         var currentValue = parseFloat($(".res-value." + resourceName).text());
@@ -15,9 +15,10 @@
 
         var mines = $(".mines").find("." + resourceName);
 
-        $.each(mines, function (index, value) {
-            currentProduction += parseInt($(value).find(".hourProduction").text());           
-        });
+        $.each(mines,
+            function(index, value) {
+                currentProduction += parseInt($(value).find(".hourProduction").text());
+            });
 
         var nextValue = (currentValue + ((start.getTime() - update) / 1000 / 60 / 60) * currentProduction).toFixed(4);
         console.log(nextValue);
@@ -27,22 +28,39 @@
         $(".res-update." + resourceName).text(start.strftime("%Y-%m-%d %H:%M:%S"));
     };
 
-   // setInterval(updateResources, 1500);
+    setInterval(updateResources, 1000);
 
-    var getMineDetailsHTML = function (mineId) {
+    var getMineDetailsHTML = function(mineId) {
         $('#mine-details-container > .content').empty();
         $('#mine-details-container > .content').load("Mine/Details/" + mineId);
         $('#mine-details-container').addClass('show');
     }
 
-    $('.mine-details-btn').click(function (e) {
+    $('.mine-details-btn').click(function(e) {
         var mineId = $(this).data('mine-id');
         getMineDetailsHTML(mineId);
         console.log("foobar");
     });
 
-    $('#mine-details-container > .close-btn').click(function () {
+    $('#mine-details-container > .close-btn').click(function() {
         $('#mine-details-container').removeClass('show');
     });
+
+    var buildingDetails = function(buildingId) {
+        $('#buildings-container > .content').empty();
+        $('#buildings-container > .content').load("Building/Details/" + buildingId);
+        $('#buildings-container').addClass('show');
+    }
+
+    $('.building-details-btn').click(function(e) {
+        var buildId = $(this).data('building-id');
+        buildingDetails(buildId);
+    });
+
+    $('#buildings-container > .close-btn').click(function() {
+        $('#buildings-container').removeClass('show');
+    });
+
+
 });
 

@@ -238,3 +238,32 @@ td {
     cursor: pointer;
 }
 
+#buildings-container {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    width: 800px;
+    margin-left: -400px;
+    display: none;
+    min-height: 300px;
+}
+
+#buildings-container.show {
+        display: block;
+    }
+
+#buildings-container .close-btn {
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 30px;
+        right: 30px;
+        cursor: pointer;
+    }
+
+.building-wrapper {
+    position: absolute;
+    top: 205px;
+    left: 585px;
+}

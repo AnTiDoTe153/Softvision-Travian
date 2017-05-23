@@ -26,24 +26,42 @@ namespace WebApplication1.Controllers
             {
                 city = dbContext.Cities.Find(cityId);
             }
-            UpdteResources(city);            
+            UpdateResources(city);            
  
             dbContext.SaveChanges();
 
             return View(city);
         }
 
-        private void UpdteResources(City city)
+        private void UpdateResources(City city)
         {
             var start = DateTime.Now;
             foreach (var res in city.Resources)
             {
                 foreach (var mine in city.Mines)
                 {
-                    if (mine.Type == res.Type)
+                    if (mine.IsUpgrading == false)
                     {
-                        res.Value += mine.GetProductionPerHour() * (start - res.LastUpdate).TotalHours;
-                        
+                        if (mine.Type == res.Type)
+                        {
+                            res.Value += mine.GetProductionPerHour() * (start - res.LastUpdate).TotalHours;
+
+                        }
+
+                        if (res.Type == ResourceType.Wheat)
+                        {
+                            if (res.Value > city.MaxWheat)
+                            {
+                                res.Value = city.MaxWheat;
+                            }
+                        }
+                        else
+                        {
+                            if (res.Value > city.MaxRes)
+                            {
+                                res.Value = city.MaxRes;
+                            }
+                        }
                     }
                 }
                 res.LastUpdate = start;
@@ -67,7 +85,7 @@ namespace WebApplication1.Controllers
 
             var r = needed.Join(have, n => n.type, h => h.Type, (n, h)=> (needed:n, have:h));
 
-            if(r.All(_=>_.needed.amount < _.have.Value))
+            if(r.All(_=>_.needed.amount > _.have.Value))
             {
                 return View(new MessageViewModel
                 {
@@ -76,29 +94,28 @@ namespace WebApplication1.Controllers
                 );
 
             }
+            if (mine.IsUpgrading == true)
+            {
+                return View(new MessageViewModel
+                    {
+                        Message = $"Mine is still upgrading."
+                    }
+                );
+            }
 
             foreach(var item in r)
             {
                 item.have.Value -= item.needed.amount;
             }
             mine.Level++;
-            mine.UpgradeCompetesAt = DateTime.Now.AddHours(0.5 * mine.Level);
+            mine.UpgradeCompletesAt = DateTime.Now.AddHours(0.5 * mine.Level);
             this.dbContext.SaveChanges();
 
             return View(new MessageViewModel
             {
-                Message = $"Mine id = {mineId} (fastUpgrade)"
+                Message = $"Mine {mineId} has been succesfully upgraded."
             }
                 );
-        }
-
-        [HttpPost]
-        public ActionResult Index(int mineId)
-        {
-            var mine = dbContext.Mines.Find(mineId);
-            mine.Upgrade();
-            dbContext.SaveChanges();
-            return RedirectToAction("Index", "Mine");
         }
 
         [HttpPost]
@@ -239,16 +256,7 @@ namespace WebApplication1.Controllers
             return RedirectToAction("Index", "Mine");
         }
 
-        [HttpPost]
-        [ActionName("Details")]
-        public ActionResult DetailsPost(int mineId)
-        {
-            var mine = dbContext.Mines.Find(mineId);
-            mine.Upgrade();
-            dbContext.SaveChanges();
 
-            return RedirectToAction("Details", "Mine", new { id = mineId });
-        }
 
         public ActionResult Details(int id)
         {

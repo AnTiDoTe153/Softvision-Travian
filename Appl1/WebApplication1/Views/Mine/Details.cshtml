@@ -35,18 +35,14 @@
         <p hidden>Time when new upgrade will be available: <span class="UpgCompl"> @(Model.UpgradeCompletion) </span> </p>
         <p>Remaining time until next update: <span class="UpgTime">00:00:00</span></p>
 
-        <form action="/Mine/Details" method="post">
-            <input type="hidden" , name="mineId" , value="@Model.MineId" />
-            <input type="submit" value="Upgrade" />
-        </form>
 
 
         @using (Html.BeginForm("Upgrade", "Mine"))
         {
-            <input name="mineId" value="10" type="hidden" />
+            <input name="mineId" value="@Model.MineId" type="hidden" />
             @Html.HiddenFor(m => m.MineId);
             @Html.CheckBox("fastUpgrade");
-            <button type="submit">UPG</button>
+            <button type="submit">Upgrade</button>
         }
 
 

@@ -10,7 +10,7 @@ namespace WebApplication1.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             ContextKey = "WebApplication1.Models.ApplicationDbContext";
         }
 
@@ -32,9 +32,9 @@ namespace WebApplication1.Migrations
 
             context.BuildingTypes.AddOrUpdate(
                         p => p.Name,
-                        new Models.BuildingType{ Name = "Granary"},
-                        new Models.BuildingType { Name = "Barn" },
-                        new Models.BuildingType { Name = "Barracks" }
+                        new Models.BuildingType{ Name = "Granary", Description = "This is where you put wheat"},
+                        new Models.BuildingType { Name = "Barn", Description = "This is where you put other stuff"},
+                        new Models.BuildingType { Name = "Barracks", Description = "This is for soldiers and stuff"}
                     );
 
             var cities = context.Cities.ToList();

@@ -1,0 +1,34 @@
+﻿@model WebApplication1.Models.Building
+@{
+    this.Layout = null;
+    ViewBag.Title = "Details";
+}
+
+
+
+<div style="border : solid black 2px; margin: 25px; padding : 5px; height: 300px; background-color: rgb(198, 184, 125); border-radius:15px;">
+
+    <h2>Details</h2>
+ 
+    <img style="float : left" src="~/Content//img/@(Model.BuildingType.Name).png" />
+
+    <p>@Model.BuildingType.Description</p>
+    <p>Type: @Model.BuildingType.Name</p>
+    <p>Level: @Model.Level</p>
+
+    
+    @using (Html.BeginForm("Upgrade", "Building"))
+    {
+        <input name="buildingId" value="@Model.BuildingId" type="hidden" />
+        <button type="submit">Upgrade</button>
+    }
+
+
+
+</div>
+
+@section Scripts{
+
+    <script src="~/Scripts/MineScript/UpgradeTime.js"></script>
+    <script src="~/Scripts/Date.min.js"></script>
+}

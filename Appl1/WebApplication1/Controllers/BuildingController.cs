@@ -22,15 +22,36 @@ namespace WebApplication1.Controllers
             return View(city);
         }
 
+
+        [HttpPost]
+        public ActionResult Upgrade(int buildingId)
+        {
+            var building = this.dbContext.Buildings.Find(buildingId);
+
+            building.Level++;
+            this.dbContext.SaveChanges();
+
+            return RedirectToAction("Index");
+           
+        }
+
         [HttpPost]
         public ActionResult Build(BuildViewModel buid)
         {
             var building = dbContext.Buildings.Find(buid.BuildingId);
             building.Level = 1;
+            building.BuildingTypeId = buid.SelectedBuildingType;
+           
             dbContext.SaveChanges();
             return RedirectToAction("Index");
         }
 
+        public ActionResult Details(int id)
+        {
+            var building = dbContext.Buildings.Find(id);
+
+            return View(building);
+        }
 
 
         public ActionResult Build(int buildingId)

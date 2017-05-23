@@ -12,6 +12,39 @@ namespace WebApplication1.Models
         public virtual IList<Resource> Resources { get; set; }
         public virtual IList<Building> Buildings { get; set; }
 
+        public int MaxWheat
+        {
+            get
+            {
+                int sum = 0;
+                foreach (var b in Buildings)
+                {
+                    if (b.BuildingType.Name == "Granary")
+                    {
+                        sum += 100 + 100 * b.Level;
+                    }
+                }
+                return sum;
+            }
+        }
+
+        public int MaxRes
+        {
+            get
+            {
+                int sum = 0;
+                foreach (var b in Buildings)
+                {
+                    if (b.BuildingType.Name == "Barn")
+                    {
+                        sum += 100 + 100 * b.Level;
+                    }
+                }
+                return sum;
+            }
+        }
+
+
         public string ApplicationUserId { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
 
@@ -76,22 +109,12 @@ namespace WebApplication1.Models
         public int MineId { get; set; }
         public virtual City City { get; set; }
         public string MineStyle { get; set; }
-        public DateTime UpgradeCompetesAt { get; set; }
-        public bool IsUpgrading { get { return this.UpgradeCompetesAt > DateTime.Now; } }
+        public DateTime UpgradeCompletesAt { get; set; }
+        public bool IsUpgrading { get { return this.UpgradeCompletesAt > DateTime.Now; } }
 
         public int Level { get; set; }
 
-
         public ResourceType Type { get; set; }
-
-        public void Upgrade()
-        {
-            if (UpgradeCompletion <= DateTime.Now)
-            {
-                Level++;
-                UpgradeCompletion = DateTime.Now.AddHours(1);
-            }  
-        }
 
         internal (int amount, ResourceType type)[] GetUpgradeRequirements()
         {
