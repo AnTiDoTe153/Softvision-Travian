@@ -1,0 +1,15 @@
+C:\Users\svuser\Documents\Visual Studio 2017\Projects\Project\Appl1\DataAccess\bin\Debug\DataAccess.dll.config
+C:\Users\svuser\Documents\Visual Studio 2017\Projects\Project\Appl1\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\svuser\Documents\Visual Studio 2017\Projects\Project\Appl1\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\svuser\Documents\Visual Studio 2017\Projects\Project\Appl1\DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\svuser\Documents\Visual Studio 2017\Projects\Project\Appl1\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\svuser\Documents\Visual Studio 2017\Projects\Project\Appl1\DataAccess\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\svuser\Documents\Visual Studio 2017\Projects\Project\Appl1\DataAccess\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\svuser\Documents\Visual Studio 2017\Projects\Project\Appl1\DataAccess\bin\Debug\System.ValueTuple.dll
+C:\Users\svuser\Documents\Visual Studio 2017\Projects\Project\Appl1\DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\svuser\Documents\Visual Studio 2017\Projects\Project\Appl1\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\svuser\Documents\Visual Studio 2017\Projects\Project\Appl1\DataAccess\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\svuser\Documents\Visual Studio 2017\Projects\Project\Appl1\DataAccess\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\svuser\Documents\Visual Studio 2017\Projects\Project\Appl1\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\svuser\Documents\Visual Studio 2017\Projects\Project\Appl1\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\svuser\Documents\Visual Studio 2017\Projects\Project\Appl1\DataAccess\obj\Debug\DataAccess.pdb

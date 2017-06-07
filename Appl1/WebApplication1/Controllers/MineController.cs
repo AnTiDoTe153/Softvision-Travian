@@ -6,6 +6,8 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using WebApplication1.Models;
+using BusinessLogic;
+using DataAccess;
 
 namespace WebApplication1.Controllers
 {
@@ -13,63 +15,22 @@ namespace WebApplication1.Controllers
     public class MineController : Controller
     {
         // GET: Mine
-        ApplicationDbContext dbContext = new ApplicationDbContext();
+     
+    
 
         public ActionResult Index(int? cityId)
         {
-   
+            
             var userId = this.User.Identity.GetUserId();
-            var user = dbContext.Users.Find(userId);
-            var city = user.Cities.First();
-
-            if (cityId != null)
-            {
-                city = dbContext.Cities.Find(cityId);
-            }
-            UpdateResources(city);            
- 
-            dbContext.SaveChanges();
+            IMinesService minesService = new MinesService();
+            var city = minesService.UpdateResources(userId);
+                       
 
             return View(city);
         }
 
-        private void UpdateResources(City city)
-        {
-            var start = DateTime.Now;
-            foreach (var res in city.Resources)
-            {
-                foreach (var mine in city.Mines)
-                {
-                    if (mine.IsUpgrading == false)
-                    {
-                        if (mine.Type == res.Type)
-                        {
-                            res.Value += mine.GetProductionPerHour() * (start - res.LastUpdate).TotalHours;
-
-                        }
-
-                        if (res.Type == ResourceType.Wheat)
-                        {
-                            if (res.Value > city.MaxWheat)
-                            {
-                                res.Value = city.MaxWheat;
-                            }
-                        }
-                        else
-                        {
-                            if (res.Value > city.MaxRes)
-                            {
-                                res.Value = city.MaxRes;
-                            }
-                        }
-                    }
-                }
-                res.LastUpdate = start;
-            }
-            dbContext.SaveChanges();
-
-        }
-        
+       
+        /*
         [HttpPost]
         public ActionResult Upgrade(int mineId, bool fastUpgrade)
         {
@@ -256,14 +217,16 @@ namespace WebApplication1.Controllers
             return RedirectToAction("Index", "Mine");
         }
 
-
-
+    */
+    /*
         public ActionResult Details(int id)
         {
             var mine = dbContext.Mines.Find(id);
 
             return View(mine);
         }
+        */
 
     }
+    
 }
