@@ -16,9 +16,9 @@
     <p>Troups:</p>
     <table>
         <th>
-            <td>Name</td>
-            <td>Attack</td>
-            <td>Defence</td>
+        <td>Name</td>
+        <td>Attack</td>
+        <td>Defence</td>
         </th>
         @foreach (var troup in Model.troups)
         {
@@ -31,5 +31,14 @@
         }
     </table>
 
+
+    @using (Html.BeginForm("Recruit", "Building"))
+    {
+        @Html.HiddenFor(m => m.building);
+        @Html.ListBoxFor(m => m.SelectedTroupType, this.Model.TroupTypes);
+     
+
+        <button type="submit">Recruit</button>
+    }
 
 </div>

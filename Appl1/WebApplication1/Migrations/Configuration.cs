@@ -33,8 +33,8 @@ namespace WebApplication1.Migrations
             context.BuildingTypes.AddOrUpdate(
                         p => p.Name,
                         new Models.BuildingType{ Name = "Granary", Description = "This is where you put wheat", Action ="Recruit"},
-                        new Models.BuildingType { Name = "Barn", Description = "This is where you put other stuff"},
-                        new Models.BuildingType { Name = "Barracks", Description = "This is for soldiers and stuff"}
+                        new Models.BuildingType { Name = "Barn", Description = "This is where you put other stuff", Action = "Details" },
+                        new Models.BuildingType { Name = "Barracks", Description = "This is for soldiers and stuff", Action = "Details" }
                     );
 
             var cities = context.Cities.ToList();

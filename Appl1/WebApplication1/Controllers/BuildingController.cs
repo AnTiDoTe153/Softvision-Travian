@@ -35,17 +35,6 @@ namespace WebApplication1.Controllers
            
         }
 
-        [HttpPost]
-        public ActionResult Build(BuildViewModel buid)
-        {
-            var building = dbContext.Buildings.Find(buid.BuildingId);
-            building.Level = 1;
-            building.BuildingTypeId = buid.SelectedBuildingType;
-           
-            dbContext.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
         public ActionResult Details(int id)
         {
             var building = dbContext.Buildings.Find(id);
@@ -53,6 +42,16 @@ namespace WebApplication1.Controllers
             return View(building);
         }
 
+        [HttpPost]
+        public ActionResult Build(BuildViewModel buid)
+        {
+            var building = dbContext.Buildings.Find(buid.BuildingId);
+            building.Level = 1;
+            building.BuildingTypeId = buid.SelectedBuildingType;
+
+            dbContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
         public ActionResult Build(int id)
 
@@ -68,6 +67,20 @@ namespace WebApplication1.Controllers
             });
         }
 
+        [HttpPost]
+        public ActionResult Recruit(BarracksViewModel troup)
+        {
+            var city = dbContext.Cities.Find(troup.building.CityId);
+            city.Troups.Add(new Troup
+            {
+
+          
+            });
+
+            dbContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
         public ActionResult Recruit(int id)
         {
             var building = this.dbContext.Buildings.Find(id);
@@ -77,6 +90,11 @@ namespace WebApplication1.Controllers
             {
                 building = building,
                 troups = city.Troups,
+                TroupTypes = this.dbContext.TroupTypes.Select(b => new SelectListItem
+                {
+                    Value = b.TroupTypeId.ToString(),
+                    Text = b.Name + "- attack: " + b.Attack + " defence: " + b.Defence ,
+                })
             });
         }
 
@@ -85,7 +103,10 @@ namespace WebApplication1.Controllers
     public class BarracksViewModel
     {
         public Building building{ get; set; }
+        public int count;
         public IList<Troup> troups { get; set; }
+        public IEnumerable<SelectListItem> TroupTypes { get; set; }
+        public int? SelectedTroupType { get; set; }
     }
 
     public class BuildViewModel
