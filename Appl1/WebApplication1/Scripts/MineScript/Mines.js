@@ -28,7 +28,7 @@
         $(".res-update." + resourceName).text(start.strftime("%Y-%m-%d %H:%M:%S"));
     };
 
-    setInterval(updateResources, 1000);
+    //setInterval(updateResources, 1000);
 
     var getMineDetailsHTML = function(mineId) {
         $('#mine-details-container > .content').empty();
@@ -48,7 +48,13 @@
 
     var buildingDetails = function(buildingId) {
         $('#buildings-container > .content').empty();
-        $('#buildings-container > .content').load("Building/Details/" + buildingId);
+        $('#buildings-container > .content').load("Building/Recruit/" + buildingId);
+        $('#buildings-container').addClass('show');
+    }
+
+    var buildingBuild = function (buildingId) {
+        $('#buildings-container > .content').empty();
+        $('#buildings-container > .content').load("Building/Build/" + buildingId);
         $('#buildings-container').addClass('show');
     }
 
@@ -57,10 +63,14 @@
         buildingDetails(buildId);
     });
 
+    $('.building-build-btn').click(function (e) {
+        var buildId = $(this).data('building-id');
+        buildingBuild(buildId);
+    });
+
     $('#buildings-container > .close-btn').click(function() {
         $('#buildings-container').removeClass('show');
     });
-
 
 });
 

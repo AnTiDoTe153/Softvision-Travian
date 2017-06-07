@@ -54,12 +54,12 @@ namespace WebApplication1.Controllers
         }
 
 
-        public ActionResult Build(int buildingId)
+        public ActionResult Build(int id)
 
         {
             return View(new BuildViewModel
             {
-                BuildingId = buildingId,
+                BuildingId = id,
                 BuildingTypes = this.dbContext.BuildingTypes.Select(b => new SelectListItem
                 {
                     Value = b.BuildingTypeId.ToString(),
@@ -68,7 +68,24 @@ namespace WebApplication1.Controllers
             });
         }
 
+        public ActionResult Recruit(int id)
+        {
+            var building = this.dbContext.Buildings.Find(id);
+            var city = this.dbContext.Cities.Find(building.CityId);
 
+            return View(new BarracksViewModel
+            {
+                building = building,
+                troups = city.Troups,
+            });
+        }
+
+    }
+
+    public class BarracksViewModel
+    {
+        public Building building{ get; set; }
+        public IList<Troup> troups { get; set; }
     }
 
     public class BuildViewModel

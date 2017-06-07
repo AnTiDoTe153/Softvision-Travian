@@ -276,22 +276,24 @@ td {
     height: 30px;
     border-radius: 15px;
     transition: all .2s linear;
-    text-align: center;
     vertical-align: middle;
     text-decoration: none;
-    background: #FAE47E;
-    border: solid 2px;
-    border-color: #C4B25A;
 }
 
-.building-level:hover {
+#build.building-level:hover {
     transform: scale(1.5);
     text-decoration: none;
 }
 
+#build.building-level {
+    background-color: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
 .building0 {
-    top: 34px;
-    left: -110px;
+    top: 37px;
+    left: -96px;
 }
 
 .building1 {
@@ -320,21 +322,46 @@ td {
 }
 
 .building6 {
-    top: 113px;
-    left: 281px;
+    top: 105px;
+    left: 300px;
 }
 
 .building7 {
-    top: 88px;
-    left: -32px;
+    top: 106px;
+    left: -25px;
 }
 
 .building8 {
-    top: -8px;
-    left: -14px;
+    top: -2px;
+    left: 3px;
 }
 
 .building9 {
     top: 63px;
     left: 57px;
+}
+
+
+#upgrade-container {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    width: 800px;
+    margin-left: -400px;
+    display: none;
+    min-height: 300px;
+}
+
+#upgrade-container.show {
+    display: block;
+}
+
+#upgrade-container .close-btn {
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
 }

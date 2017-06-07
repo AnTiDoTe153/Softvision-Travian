@@ -1,17 +1,20 @@
 ﻿@model WebApplication1.Controllers.BuildViewModel
 @{
+    this.Layout = null;
     ViewBag.Title = "Build";
 }
-<body style ="background-image:url(../Content/img/city.jpg);">
-<h2>Build</h2>
 
-@using (Html.BeginForm("Build", "Building"))
-{
-    @Html.HiddenFor(m => m.BuildingId);
-    @Html.ListBoxFor(m => m.SelectedBuildingType, this.Model.BuildingTypes)
-    <button type="submit">Build</button>
-}
-    
-</body>
+<div style="border : solid black 2px; margin: 25px; padding : 5px; height: 300px; background-color: rgb(198, 184, 125); border-radius:15px;">
+    <h2>Build</h2>
+
+    @using (Html.BeginForm("Build", "Building"))
+    {
+        @Html.HiddenFor(m => m.BuildingId);
+        @Html.ListBoxFor(m => m.SelectedBuildingType, this.Model.BuildingTypes);
+        
+        <button type="submit">Build</button>
+    }
+
+    </div>
 
 

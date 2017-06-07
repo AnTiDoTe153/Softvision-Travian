@@ -946,3 +946,6 @@ C:\Users\svuser\Desktop\Soft2\Appl1\WebApplication1\obj\Debug\WebApplication1.dl
 C:\Users\svuser\Desktop\Soft2\Appl1\WebApplication1\obj\Debug\WebApplication1.pdb
 C:\Users\svuser\Desktop\Soft2\Appl1\WebApplication1\obj\Debug\WebApplication1.Migrations.troups.resources
 C:\Users\svuser\Desktop\Soft2\Appl1\WebApplication1\obj\Debug\WebApplication1.Migrations.validation.resources
+C:\Users\Pebbles\Desktop\Soft2\Appl1\WebApplication1\obj\Debug\WebApplication1.Migrations.troups.resources
+C:\Users\Pebbles\Desktop\Soft2\Appl1\WebApplication1\obj\Debug\WebApplication1.Migrations.validation.resources
+C:\Users\Pebbles\Desktop\Soft2\Appl1\WebApplication1\obj\Debug\WebApplication1.Migrations.stuff.resources

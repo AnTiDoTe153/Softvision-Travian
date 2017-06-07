@@ -1,0 +1,35 @@
+﻿@model WebApplication1.Controllers.BarracksViewModel
+@{
+    this.Layout = null;
+    ViewBag.Title = "Recruit";
+}
+
+<div style="border : solid black 2px; margin: 25px; padding : 5px; height: 300px; background-color: rgb(198, 184, 125); border-radius:15px;">
+
+
+    <h2>Barracks</h2>
+    <img style="float : left" src="~/Content//img/@(Model.building.BuildingType.Name).png" />
+
+    <p>@Model.building.BuildingType.Description</p>
+    <p>Type: @Model.building.BuildingType.Name</p>
+    <p>Level: @Model.building.Level</p>
+    <p>Troups:</p>
+    <table>
+        <th>
+            <td>Name</td>
+            <td>Attack</td>
+            <td>Defence</td>
+        </th>
+        @foreach (var troup in Model.troups)
+        {
+            <tr>
+                <td>@troup.TroupType.Name</td>
+                <td>@troup.TroupType.Attack</td>
+                <td>@troup.TroupType.Defence</td>
+
+            </tr>
+        }
+    </table>
+
+
+</div>

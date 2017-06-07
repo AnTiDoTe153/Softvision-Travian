@@ -15,6 +15,7 @@
     <p>@Model.BuildingType.Description</p>
     <p>Type: @Model.BuildingType.Name</p>
     <p>Level: @Model.Level</p>
+   
 
     
     @using (Html.BeginForm("Upgrade", "Building"))
@@ -22,7 +23,10 @@
         <input name="buildingId" value="@Model.BuildingId" type="hidden" />
         <button type="submit">Upgrade</button>
     }
-
+    
+    <div>
+        
+    </div>
 
 
 </div>
