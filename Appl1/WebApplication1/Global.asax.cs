@@ -1,5 +1,6 @@
 ﻿using BusinessLogic;
 using SimpleInjector;
+using SimpleInjector.Integration.Web.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,6 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-
 namespace WebApplication1
 {
     public class MvcApplication : System.Web.HttpApplication
@@ -20,7 +20,12 @@ namespace WebApplication1
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             var container = new Container();
-            container.Register<IMinesService, MinesService>(Lifestyle.Transient);
+            container.Register<IMinesService, MinesService>();
+            container.Verify();
+
+            DependencyResolver.SetResolver(
+                new SimpleInjectorDependencyResolver(container));
+
         }
     }
 }

@@ -18,11 +18,9 @@ namespace WebApplication1.Controllers
 
         public ActionResult Index(int? cityId)
         {
-            
             var userId = this.User.Identity.GetUserId();
             IMinesService minesService = new MinesService();
             var city = minesService.UpdateResources(userId);
-                       
 
             return View(city);
         }

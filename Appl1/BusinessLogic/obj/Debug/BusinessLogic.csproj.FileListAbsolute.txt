@@ -36,3 +36,14 @@ C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\obj\Debug\BusinessL
 C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\obj\Debug\BusinessLogic.pdb
 C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\SimpleInjector.dll
 C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\SimpleInjector.xml
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\SimpleInjector.Integration.Web.dll
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\SimpleInjector.Integration.Web.Mvc.dll
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\System.Web.Helpers.dll
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\System.Web.Mvc.dll
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\System.Web.Razor.dll
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\System.Web.WebPages.dll
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\SimpleInjector.Integration.Web.xml
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\SimpleInjector.Integration.Web.Mvc.xml

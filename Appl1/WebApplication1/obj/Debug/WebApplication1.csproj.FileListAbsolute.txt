@@ -1221,3 +1221,7 @@ C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\WebApplication1\obj\Debug\WebAppl
 C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\WebApplication1\obj\Debug\WebApplication1.pdb
 C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\WebApplication1\bin\SimpleInjector.dll
 C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\WebApplication1\bin\SimpleInjector.xml
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\WebApplication1\bin\SimpleInjector.Integration.Web.dll
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\WebApplication1\bin\SimpleInjector.Integration.Web.Mvc.dll
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\WebApplication1\bin\SimpleInjector.Integration.Web.xml
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\WebApplication1\bin\SimpleInjector.Integration.Web.Mvc.xml
