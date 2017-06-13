@@ -2,42 +2,7 @@
 @{
     ViewBag.Title = "Index";
 }
-<body style="background-image:url(../Content/img/city.jpg);">
-
-@*
-    <table>
-        <tr>
-            <th>Type</th>
-            <th>Level</th>
-            <th>Action</th>
-        </tr>
-        @foreach (var building in Model.Buildings)
-        {
-            <tr>
-                @{
-                    if (building.BuildingType != null)
-                    {
-
-                        <td>@building.BuildingType.Name</td>
-                        <td>@building.Level</td>
-                        <td>@building.BuildingStyle</td>
-                        //<td>@Html.ActionLink("Details", "Details", new { buildingId = building.BuildingId })</td>
-                        <td style="cursor:pointer" class="building-details-btn" data-building-id="@(building.BuildingId)">Details</td>
-                    }
-                    else
-                    {
-                        <td>Nothing</td>
-                        <td>0</td>
-                        <td>@Html.ActionLink("Build", "Build", new {buildingId = building.BuildingId})</td>
-
-                    }
-                }
-            </tr>
-        }
-
-    </table>
- *@
-    
+<body style="background-image:url(../Content/img/city.jpg);">    
     
 <div class="building-wrapper">
 @foreach (var building in Model.Buildings)
@@ -45,7 +10,7 @@
     if (building.BuildingType != null)
     {
         <div class="building-level @(building.BuildingStyle)">
-            <div style="cursor: pointer" class="building-details-btn" data-building-id="@(building.BuildingId)"> 
+            <div style="cursor: pointer" class="building-details-btn" data-building-id="@(building.BuildingId)" data-action="@(building.BuildingType.Action)"> 
                 <img style="position: absolute; top: -46px; left: -38px; width: 70px; height: 70px;" src="~/Content/img/@(building.BuildingType.Name).png" />
             </div >
         </div>
@@ -67,7 +32,6 @@
         <div class="content"></div>
     </div>
     @section Scripts{
-
         <script src="~/Scripts/MineScript/Mines.js"></script>
         <script src="~/Scripts/Date.min.js"></script>
     }

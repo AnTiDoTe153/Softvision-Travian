@@ -15,8 +15,6 @@ namespace WebApplication1.Controllers
     public class MineController : Controller
     {
         // GET: Mine
-     
-    
 
         public ActionResult Index(int? cityId)
         {

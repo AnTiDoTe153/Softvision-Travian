@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLogic;
+using SimpleInjector;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +18,9 @@ namespace WebApplication1
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            var container = new Container();
+            container.Register<IMinesService, MinesService>(Lifestyle.Transient);
         }
     }
 }

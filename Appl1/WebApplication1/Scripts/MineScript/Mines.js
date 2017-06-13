@@ -46,9 +46,9 @@
         $('#mine-details-container').removeClass('show');
     });
 
-    var buildingDetails = function(buildingId) {
+    var buildingDetails = function(buildingId, action) {
         $('#buildings-container > .content').empty();
-        $('#buildings-container > .content').load("Building/Recruit/" + buildingId);
+        $('#buildings-container > .content').load("Building/" + action + "/" + buildingId);
         $('#buildings-container').addClass('show');
     }
 
@@ -60,7 +60,8 @@
 
     $('.building-details-btn').click(function(e) {
         var buildId = $(this).data('building-id');
-        buildingDetails(buildId);
+        var action = $(this).data('action');
+        buildingDetails(buildId, action);
     });
 
     $('.building-build-btn').click(function (e) {

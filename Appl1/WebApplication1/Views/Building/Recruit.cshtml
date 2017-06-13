@@ -8,37 +8,36 @@
 
 
     <h2>Barracks</h2>
-    <img style="float : left" src="~/Content//img/@(Model.building.BuildingType.Name).png" />
+    <img style="width : 150px; height : 150px; float : left" src="~/Content/img/Barracks.png" />
 
-    <p>@Model.building.BuildingType.Description</p>
-    <p>Type: @Model.building.BuildingType.Name</p>
-    <p>Level: @Model.building.Level</p>
-    <p>Troups:</p>
-    <table>
-        <th>
+    <div style=" float : right; margin-right: 100px;">
+    <h3>Recruit troups</h3>
+    @using (Html.BeginForm("Recruit", "Building"))
+    {
+        @Html.HiddenFor(m => m.CityID);
+        @Html.HiddenFor(m => m.count);
+        @Html.ListBoxFor(m => m.SelectedTroupType, this.Model.TroupTypes);
+        <button style="position:absolute; bottom : 100px;" type="submit">Recruit</button>
+    }
+    </div >
+    <div style="float:left">
+        <h3>Current troups</h3>
+    <table class="troups-table">
+        <tr>
         <td>Name</td>
-        <td>Attack</td>
-        <td>Defence</td>
-        </th>
+        <td>Count</td>
+        </tr>
         @foreach (var troup in Model.troups)
         {
             <tr>
                 <td>@troup.TroupType.Name</td>
-                <td>@troup.TroupType.Attack</td>
-                <td>@troup.TroupType.Defence</td>
+                <td>@troup.TroupCount</td>
 
             </tr>
         }
     </table>
+        </div>
 
-
-    @using (Html.BeginForm("Recruit", "Building"))
-    {
-        @Html.HiddenFor(m => m.building);
-        @Html.ListBoxFor(m => m.SelectedTroupType, this.Model.TroupTypes);
-     
-
-        <button type="submit">Recruit</button>
-    }
+  
 
 </div>

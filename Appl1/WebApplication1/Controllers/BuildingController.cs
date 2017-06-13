@@ -70,11 +70,11 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public ActionResult Recruit(BarracksViewModel troup)
         {
-            var city = dbContext.Cities.Find(troup.building.CityId);
+            var city = dbContext.Cities.Find(troup.CityID);
             city.Troups.Add(new Troup
             {
-
-          
+                TroupCount = troup.count,
+                TroupTypeId = (int)troup.SelectedTroupType,
             });
 
             dbContext.SaveChanges();
@@ -88,8 +88,9 @@ namespace WebApplication1.Controllers
 
             return View(new BarracksViewModel
             {
-                building = building,
+                CityID = building.CityId,
                 troups = city.Troups,
+                count = 10,
                 TroupTypes = this.dbContext.TroupTypes.Select(b => new SelectListItem
                 {
                     Value = b.TroupTypeId.ToString(),
@@ -102,7 +103,7 @@ namespace WebApplication1.Controllers
 
     public class BarracksViewModel
     {
-        public Building building{ get; set; }
+        public int CityID { get; set; }
         public int count;
         public IList<Troup> troups { get; set; }
         public IEnumerable<SelectListItem> TroupTypes { get; set; }

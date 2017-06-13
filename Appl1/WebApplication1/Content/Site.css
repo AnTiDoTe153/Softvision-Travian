@@ -365,3 +365,16 @@ td {
     right: 30px;
     cursor: pointer;
 }
+
+.troups-table{
+    background-color : #4a2e08;
+    border : solid black 2px;
+
+}
+
+    .troups-table > th, td {
+        border: solid black 2px;
+        background-color: #8e5932;
+        color: black;
+        text-align: center;
+    }

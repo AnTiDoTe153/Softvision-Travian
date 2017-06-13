@@ -16,3 +16,23 @@ C:\Users\svuser\Documents\Visual Studio 2017\Projects\Project\Appl1\BusinessLogi
 C:\Users\svuser\Documents\Visual Studio 2017\Projects\Project\Appl1\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
 C:\Users\svuser\Documents\Visual Studio 2017\Projects\Project\Appl1\BusinessLogic\obj\Debug\BusinessLogic.dll
 C:\Users\svuser\Documents\Visual Studio 2017\Projects\Project\Appl1\BusinessLogic\obj\Debug\BusinessLogic.pdb
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\BusinessLogic.dll.config
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\DataAccess.dll
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\System.ValueTuple.dll
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\DataAccess.pdb
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\DataAccess.dll.config
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\obj\Debug\BusinessLogic.pdb
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\SimpleInjector.dll
+C:\Users\Pebbles\Desktop\Softvision-Test\Appl1\BusinessLogic\bin\Debug\SimpleInjector.xml
